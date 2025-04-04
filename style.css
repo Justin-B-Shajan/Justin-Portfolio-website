@@ -33,7 +33,7 @@ nav{
     text-shadow: 0 0 10px #000000;
 }
 .hamburg,
-.cancel{
+.cancel {
     cursor: pointer;
     position: absolute;
     right: 15px;
@@ -41,6 +41,7 @@ nav{
     color: white;
     display: none;
     font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+    z-index: 200; /* Ensure it's above dropdown */
 }
 .nav-container .links{
     display: flex;
@@ -130,27 +131,43 @@ nav{
 .nav-container .links a:hover{
     color: #077b32;
 }
-.dropdown{
-    z-index: 100;
+.dropdown {
+    z-index: 150;
     position: absolute;
-    top: 0;
-    transform: translateY(-500px);
+    top: 10vh; /* Adjust based on nav height */
+    left: 0;
     width: 100%;
-    height: auto;
-    backdrop-filter: blur(4px) brightness(40%);
-    box-shadow:  0 0 20px black;
-    transition: 0.2s linear;
+    background: rgba(0, 0, 0, 0.95);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: none;
+    flex-direction: column;
+    align-items: center;
 }
-.dropdown .links a{
+
+.dropdown.active {
     display: flex;
+    transform: translateY(0);
+}
+
+/* Dropdown Links */
+.dropdown .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown .links a {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
     color: white;
     text-decoration: none;
-    justify-content: center;
-    padding: 15px 0;
-    align-items: center;
-    transition: 0.2s linear;
+    transition: background-color 0.3s ease;
 }
-.dropdown .links a:hover{
+
+.dropdown .links a:hover {
     background-color: #077b32;
 }
 /* Certifications Page Styles */
