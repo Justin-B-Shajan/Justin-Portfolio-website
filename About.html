@@ -1,69 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>About Me</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>About Me</title>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">JUSTIN B SHAJAN<span> | PORTFOLIO</span>
-            </div>
-            <div class="links">
-                <div class="link"><a href="index.html">Home</a></div>
-                <div class="link"><a href="About.html">About</a></div>
-                <div class="link"><a href="skills.html">Skills</a></div>
-                <div class="link"><a href="projects.html">Projects</a></div>
-                <div class="link"><a href="certifications.html">Certifications</a></div>
-                <div class="link"><a href="contact.html">Contact</a></div>
-            </div>
-        </div>
-        <div class="dropdown">
-            <div class="links">
-                <a href="#">Home</a>
-                <a href="About.html">About</a>
-                <a href="skills.html">Skills</a>
-                <a href="certifications.html">Certifications</a>
-                <a href="projects.html">Projects</a>
-                <a href="contact.html">Contact</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-            </div>
-        </div>
-    </nav>
 
-    <section class="certifications-section">
-        <div class="certifications-container">
-            <h1>About Me</h1>
+  <!-- ✅ Navigation Bar START -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">JUSTIN B SHAJAN<span> | PORTFOLIO</span></div>
 
-            <div class="certification">
-                <p class="slide-up">
-                    Hello! I'm <strong>Justin B Shajan</strong>, a passionate <strong>Web Developer</strong> and <strong>Cybersecurity Enthusiast</strong>.  
-                    I specialize in building secure, high-performance web applications with expertise in both front-end and back-end technologies.
-                </p><br>
-                
-                <p class="slide-up">
-                    I have hands-on experience with various tools such as <strong>Wireshark, Metasploit, and Nmap</strong> and have participated in several security assessments and vulnerability analyses.
-                    I’m constantly learning and evolving to stay ahead in the ever-changing cybersecurity landscape. My aim is to help organizations stay secure by identifying weaknesses and providing solutions.
-                </p><br>
-        
-                <p class="slide-up">
-                    My interest in ethical hacking started early when I became fascinated by how systems work and how vulnerabilities can be exploited. Since then, I have dedicated my time to ethical hacking, focusing on responsible security practices.
-                </p><br>
-        
-                <p class="slide-up">
-                    In my free time, I enjoy participating in <strong>Capture The Flag (CTF) challenges</strong>, experimenting with security tools, and writing about cybersecurity techniques.
-                    My goal is to become a top cybersecurity professional, helping organizations secure their infrastructure. I am also working towards earning my <strong>CEH (Certified Ethical Hacker)</strong> certification.
-                </p>
-    
-                <br>
-                
-                <p class="zoom-in"><b>
-                    I am actively looking for opportunities to apply my skills and cybersecurity knowledge in <strong>threat intelligence, security automation, ethical hacking, and web development</strong>.</b>
-                </p>
-            </div>
-        </div>
-    </section>
+      <!-- Desktop Links -->
+      <div class="links desktop-links">
+        <div class="link"><a href="index.html">Home</a></div>
+        <div class="link"><a href="About.html">About</a></div>
+        <div class="link"><a href="skills.html">Skills</a></div>
+        <div class="link"><a href="projects.html">Projects</a></div>
+        <div class="link"><a href="certifications.html">Certifications</a></div>
+        <div class="link"><a href="contact.html">Contact</a></div>
+      </div>
+
+      <!-- Hamburger icon -->
+      <div class="hamburger" onclick="toggleDropdown()">
+        <i class="fas fa-ellipsis-v"></i>
+      </div>
+    </div>
+
+    <!-- Dropdown Menu (Mobile) -->
+    <div class="dropdown" id="mobileDropdown">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="contact.html">Contact</a>
+        <i class="fas fa-times cancel" onclick="cancelDropdown()"></i>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    function toggleDropdown() {
+      document.getElementById('mobileDropdown').style.display = 'block';
+    }
+
+    function cancelDropdown() {
+      document.getElementById('mobileDropdown').style.display = 'none';
+    }
+  </script>
+  <!-- ✅ Navigation Bar END -->
+
+  <!-- ✅ About Section -->
+  <section class="certifications-section">
+    <div class="certifications-container">
+      <h1>About Me</h1>
+
+      <div class="certification">
+        <p class="slide-up">
+          Hello! I'm <strong>Justin B Shajan</strong>, a passionate <strong>Web Developer</strong> and <strong>Cybersecurity Enthusiast</strong>.  
+          I specialize in building secure, high-performance web applications with expertise in both front-end and back-end technologies.
+        </p><br>
+
+        <p class="slide-up">
+          I have hands-on experience with various tools such as <strong>Wireshark, Metasploit, and Nmap</strong> and have participated in several security assessments and vulnerability analyses.
+          I’m constantly learning and evolving to stay ahead in the ever-changing cybersecurity landscape.
+        </p><br>
+
+        <p class="slide-up">
+          My interest in ethical hacking started early when I became fascinated by how systems work and how vulnerabilities can be exploited.
+        </p><br>
+
+        <p class="slide-up">
+          In my free time, I enjoy participating in <strong>Capture The Flag (CTF) challenges</strong> and experimenting with security tools.
+        </p><br>
+
+        <p class="zoom-in"><b>
+          I am actively looking for opportunities to apply my skills in <strong>threat intelligence, security automation, ethical hacking, and web development</strong>.
+        </b></p>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
