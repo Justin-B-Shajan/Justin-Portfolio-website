@@ -9,6 +9,8 @@ function cancel(){
 // Typewriter Effect
 const texts = [
     "SOC ANALYST",
+    "ETHICAL HACKER",
+    "INCIDENT RESPONDER",
     "WEB DEVELOPER"
    
 ]
