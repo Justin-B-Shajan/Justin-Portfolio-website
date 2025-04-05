@@ -250,7 +250,10 @@ nav{
         transform: translateY(0);
     }
 }
-
+.certification.active .cert-details {
+    max-height: 500px;
+    opacity: 1;
+}
 
 /* Skills Container Styling */
 .skills-container {
