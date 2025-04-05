@@ -51,4 +51,10 @@ function eraseText() {
     }
 }
 
+document.querySelectorAll('.certification').forEach(cert => {
+    cert.addEventListener('click', () => {
+      cert.classList.toggle('active');
+    });
+  });
+
 window.onload = typeWriter;
