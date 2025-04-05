@@ -171,32 +171,35 @@ nav{
     background-color: #077b32;
 }
 /* Certifications Page Styles */
+.certifications-section {
+    width: 100%;
+    padding: 80px 20px;
+    overflow-y: auto;
+    background: #0a192f;
+    min-height: 100vh;
+}
+
 .certifications-container {
     max-width: 1200px;
-    margin: 100px auto;
+    margin: 0 auto;
     background: #112240;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(100, 255, 218, 0.3);
-    text-align: left;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeIn 1s ease-in-out forwards;
+    text-align: center;
 }
 
 .certifications-container h1 {
-    text-align: center;
     color: #077b32;
     text-shadow: 0 0 10px #000000;
     font-size: 2.5rem;
-    margin-bottom: 20px;
-    animation: fadeIn 1s ease-in-out;
+    margin-bottom: 30px;
 }
 
-/* Certification Cards Animation */
+/* Certification Cards */
 .certification {
     background: #0a192f;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 10px rgba(100, 255, 218, 0.3);
@@ -204,32 +207,40 @@ nav{
     opacity: 0;
     transform: translateY(20px);
     animation: slideUp 1s ease-in-out forwards;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-/* Stagger effect for multiple certifications */
-.certification:nth-child(1) {
-    animation-delay: 0.3s;
-}
-.certification:nth-child(2) {
-    animation-delay: 0.5s;
-}
-.certification:nth-child(3) {
-    animation-delay: 0.7s;
-}
-.certification:nth-child(4) {
-    animation-delay: 0.9s;
-}
-.certification:nth-child(5) {
-    animation-delay: 1.1s;
-}
-
-/* Hover effect */
 .certification:hover {
     transform: scale(1.03);
 }
 
-/* Keyframes for Animations */
-@keyframes fadeIn {
+/* Title always visible */
+.cert-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px #000000;
+}
+
+/* Hidden details */
+.cert-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Reveal details on hover */
+.certification:hover .cert-details {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Animation keyframes */
+@keyframes slideUp {
     from {
         opacity: 0;
         transform: translateY(30px);
@@ -240,29 +251,12 @@ nav{
     }
 }
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.certifications-section {
-    width: 100%;
-    height: 155vh; /* Specific height only for certifications */
-}
-
-
 
 /* Skills Container Styling */
 .skills-container {
     max-width: 900px;
     margin: 50px auto;
-    background: #112240;
+    background: #11224000;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(100, 255, 218, 0.3);
@@ -482,10 +476,21 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    overflow-y: auto;
     background-color: #0a192f;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
+
+.body-certi-det {
+    font-family: Arial, sans-serif;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #0a192f;
+    color: #ffffff;
+    text-shadow: 0 0 10px #000000;
+}
+
 
 .contact-container {
     max-width: 100px;
@@ -556,8 +561,6 @@ h1 {
     max-width: 900px;
     margin: auto;
     text-align: center;
-    max-height: 100vh;
-    overflow-y: auto;
 }
 
 .projects-title {
@@ -575,60 +578,83 @@ h1 {
     gap: 20px;
 }
 
-/* Project Card Animations */
 .project-card {
     background: #1e1e1e00;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 255, 204, 0.3);
     text-align: left;
-    transition: 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     opacity: 0;
     transform: translateY(20px);
     animation: slideUp 1s ease-in-out forwards;
+    overflow: hidden;
 }
 
-/* Stagger animation for multiple cards */
-.project-card:nth-child(1) {
-    animation-delay: 0.3s;
-}
-.project-card:nth-child(2) {
-    animation-delay: 0.5s;
-}
-.project-card:nth-child(3) {
-    animation-delay: 0.7s;
-}
-.project-card:nth-child(4) {
-    animation-delay: 0.9s;
-}
+.project-card:nth-child(1) { animation-delay: 0.3s; }
+.project-card:nth-child(2) { animation-delay: 0.5s; }
+.project-card:nth-child(3) { animation-delay: 0.7s; }
+.project-card:nth-child(4) { animation-delay: 0.9s; }
 
-/* Hover effect */
 .project-card:hover {
     transform: scale(1.02);
     box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.5);
 }
 
-/* Keyframes for Animations */
+/* Only show title initially */
+.project-card .title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px #000000;
+    display: block;
+    text-align: center; /* ✅ Center alignment */
+    margin-bottom: 10px;
+}
+
+
+/* Hide details until hover */
+.project-card .details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.project-card:hover .details {
+    max-height: 300px;
+    opacity: 1;
+}
+
+/* Animations */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-body {
-    overflow-y: auto;
+
+.skill .details {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    color: #ffffff;
+    text-shadow: 0 0 10px #000000;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Reveal details on hover */
+.skill:hover .details {
+    max-height: 200px;
+    opacity: 1;
 }
