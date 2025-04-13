@@ -259,12 +259,13 @@ nav{
 .skills-container {
     max-width: 900px;
     margin: 50px auto;
-    background: #11224000;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(100, 255, 218, 0.3);
+    background: rgba(17, 34, 64, 0.6); /* semi-transparent dark blue */
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3); /* stronger glow */
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
+    backdrop-filter: blur(8px); /* optional for frosted glass look */
 }
 
 .skills-container h1 {
