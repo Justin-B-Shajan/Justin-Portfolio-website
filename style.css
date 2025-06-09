@@ -349,6 +349,7 @@ section{
 }
 .main-container .image img{
     width: 110%;
+    height: 100%;
 }
 .main-container .image:hover{
     animation: animate 1.5s ease-in-out infinite;
